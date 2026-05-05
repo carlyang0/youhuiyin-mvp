@@ -47,23 +47,23 @@ export function TaskDetailView() {
 
   function setStatus(status: TaskStatus) {
     if (!task) return;
-    updateStatus(task.id, status, `标记为${statusMeta[status].label}`);
+    void updateStatus(task.id, status, `标记为${statusMeta[status].label}`);
   }
 
   function generateCompletion() {
     if (!task) return;
-    addEvent(task.id, "feedback_generated", buildCompletionMessage(task));
+    void addEvent(task.id, "feedback_generated", buildCompletionMessage(task));
   }
 
   function generateDelay() {
     if (!task) return;
-    addEvent(task.id, "delay_generated", buildDelayMessage(task));
-    updateStatus(task.id, "delayed", "生成延期说明并标记为已延期");
+    void addEvent(task.id, "delay_generated", buildDelayMessage(task));
+    void updateStatus(task.id, "delayed", "生成延期说明并标记为已延期");
   }
 
   function writeReview() {
     if (!task) return;
-    addEvent(
+    void addEvent(
       task.id,
       "review_written",
       `复盘：这件事的闭环关键是「${task.closeStandard}」。下一次要更早同步进度。`,

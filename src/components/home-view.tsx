@@ -37,9 +37,9 @@ export function HomeView() {
   const closedCount = tasks.filter((task) => task.status === "closed").length;
   const waitingCount = tasks.filter((task) => task.status === "waiting").length;
 
-  function handleQuickCollect() {
+  async function handleQuickCollect() {
     if (!parsed) return;
-    const task = addTask(parsed);
+    const task = await addTask(parsed);
     setLastCreatedId(task.id);
     setInput("");
   }

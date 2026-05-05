@@ -18,8 +18,8 @@ export function NewTaskView() {
 
   const parsed = useMemo(() => parseTaskInput(input), [input]);
 
-  function handleCreate() {
-    const task = addTask(parsed);
+  async function handleCreate() {
+    const task = await addTask(parsed);
     setConfirmed(true);
     setTimeout(() => router.push(`/tasks/${task.id}`), 320);
   }

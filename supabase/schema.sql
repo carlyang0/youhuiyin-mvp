@@ -33,6 +33,19 @@ create table public.task_events (
   created_at timestamptz not null default now()
 );
 
+create or replace function public.set_updated_at()
+returns trigger as $$
+begin
+  new.updated_at = now();
+  return new;
+end;
+$$ language plpgsql;
+
+create trigger set_tasks_updated_at
+before update on public.tasks
+for each row
+execute function public.set_updated_at();
+
 alter table public.tasks enable row level security;
 alter table public.task_events enable row level security;
 
@@ -49,6 +62,10 @@ on public.tasks for update
 using (auth.uid() = user_id)
 with check (auth.uid() = user_id);
 
+create policy "Users can delete their tasks"
+on public.tasks for delete
+using (auth.uid() = user_id);
+
 create policy "Users can read their task events"
 on public.task_events for select
 using (auth.uid() = user_id);
@@ -56,3 +73,7 @@ using (auth.uid() = user_id);
 create policy "Users can insert their task events"
 on public.task_events for insert
 with check (auth.uid() = user_id);
+
+create policy "Users can delete their task events"
+on public.task_events for delete
+using (auth.uid() = user_id);
