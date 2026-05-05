@@ -1,0 +1,21 @@
+{
+  "name": "有回音｜AI 闭环习惯训练工具",
+  "short_name": "有回音",
+  "description": "把承诺、任务和沟通变成可追踪的闭环。",
+  "lang": "zh-CN",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7f8fb",
+  "theme_color": "#f7f8fb",
+  "icons": [
+    {
+      "src": "/icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["productivity", "utilities"]
+}
