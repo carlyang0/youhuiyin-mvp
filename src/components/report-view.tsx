@@ -24,7 +24,7 @@ export function ReportView() {
         <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
           <div>
             <p className="text-sm font-semibold text-blue-700">本周闭环报告</p>
-            <h1 className="mt-2 text-3xl font-semibold tracking-normal text-slate-950">
+            <h1 className="mt-2 text-2xl font-semibold tracking-normal text-slate-950">
               本周你创建了 {total} 个闭环事项。
             </h1>
             <p className="mt-3 text-base leading-7 text-slate-600">
@@ -78,12 +78,12 @@ function ReportMetric({
   value: string;
 }) {
   return (
-    <div className="rounded-lg border border-slate-200 bg-white p-4">
-      <div className="flex items-center gap-2 text-sm font-semibold text-slate-500">
+    <div className="rounded-lg border border-slate-200 bg-white p-3">
+      <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500">
         <Icon className="h-4 w-4" aria-hidden="true" />
         {label}
       </div>
-      <div className="mt-3 text-2xl font-semibold text-slate-950">{value}</div>
+      <div className="mt-2 text-2xl font-semibold text-slate-950">{value}</div>
     </div>
   );
 }

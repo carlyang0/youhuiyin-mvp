@@ -20,7 +20,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
         <div className="flex min-h-0 flex-1 flex-col overflow-hidden bg-background sm:rounded-[28px]">
           <header
-            className="border-b border-slate-200/80 bg-white/92 px-4 py-3 backdrop-blur"
+            className="border-b border-slate-200/80 bg-white/95 px-4 py-3 backdrop-blur"
             style={{ paddingTop: "calc(env(safe-area-inset-top) + 0.75rem)" }}
           >
             <Link href="/" className="flex items-center gap-3">

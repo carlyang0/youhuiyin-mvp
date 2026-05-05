@@ -83,7 +83,7 @@ export function TaskDetailView() {
                     截止 {formatDateTime(task.deadline)}
                   </span>
                 </div>
-                <h1 className="mt-4 text-3xl font-semibold tracking-normal text-slate-950">
+                <h1 className="mt-4 text-2xl font-semibold tracking-normal text-slate-950">
                   {task.title}
                 </h1>
                 <p className="mt-2 text-slate-600">相关人：{task.relatedPerson}</p>

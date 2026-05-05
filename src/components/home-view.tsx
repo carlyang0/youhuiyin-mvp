@@ -205,12 +205,12 @@ function Metric({
   tone: string;
 }) {
   return (
-    <div className="rounded-lg border border-slate-200 bg-slate-50 p-4">
-      <div className={`flex items-center gap-2 text-sm font-semibold ${tone}`}>
+    <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
+      <div className={`flex items-center gap-1.5 text-xs font-semibold ${tone}`}>
         <Icon className="h-4 w-4" aria-hidden="true" />
         {label}
       </div>
-      <div className="mt-3 text-2xl font-semibold text-slate-950">{value}</div>
+      <div className="mt-2 text-2xl font-semibold text-slate-950">{value}</div>
     </div>
   );
 }

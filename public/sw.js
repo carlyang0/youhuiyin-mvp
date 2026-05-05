@@ -1,5 +1,11 @@
 const CACHE_NAME = "youhuiyin-v1";
-const APP_SHELL = ["/", "/manifest.webmanifest", "/icons/app-icon.svg"];
+const APP_SHELL = [
+  "/",
+  "/manifest.webmanifest",
+  "/icons/app-icon.svg",
+  "/icons/app-icon-180.png",
+  "/icons/app-icon-512.png",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
